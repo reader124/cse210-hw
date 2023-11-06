@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning05 World!");
+        srRectangle srMyRect = new srRectangle();
+        srSquare srMySquare = new srSquare();
+        srCircle srMyCircle = new srCircle();
     }
 }
