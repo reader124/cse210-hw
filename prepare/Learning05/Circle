@@ -19,7 +19,7 @@ public class srCircle : srShape
     }
 
     //overridden get area method
-    public override srGetArea()
+    public override double srGetArea()
     {
         return srRadius * srRadius * Math.PI;
     }

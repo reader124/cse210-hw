@@ -23,7 +23,7 @@ public class srRectangle : srShape
     }
 
     //overridden get area method
-    public override srGetArea()
+    public override double srGetArea()
     {
         return srLength * srWidth;
     }
