@@ -1,6 +1,6 @@
 using System;
 
-public abstract class srShape;
+public abstract class srShape
 {
     protected string srColor;
 
