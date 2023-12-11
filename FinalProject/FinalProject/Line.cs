@@ -44,7 +44,6 @@ public class srLine : srObject
         line.Y1 = srYCoor;
         line.X2 = srXCoor + srWidth;
         line.Y2 = srYCoor + srHeight;
-        line.Margin = new Thickness(srWidth, srHeight, srWidth, srHeight);
         Canvas.SetTop(line, srYCoor);
         Canvas.SetLeft(line, srXCoor);
         line.Stroke = System.Windows.Media.Brushes.Black;

@@ -32,7 +32,6 @@ public class srRectangle : srShape
         Rectangle rect = new Rectangle();
         rect.Width = srWidth;
         rect.Height = srHeight;
-        rect.Margin = new Thickness(srWidth, srHeight, srWidth, srHeight);
         Canvas.SetTop(rect, srYCoor);
         Canvas.SetLeft(rect, srXCoor);
         rect.Fill = new SolidColorBrush(srColor);

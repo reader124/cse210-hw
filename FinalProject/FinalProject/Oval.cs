@@ -32,7 +32,6 @@ public class srOval : srShape
         Ellipse ellipse = new Ellipse();
         ellipse.Width = srWidth;
         ellipse.Height = srHeight;
-        ellipse.Margin = new Thickness(srWidth, srHeight, srWidth, srHeight);
         Canvas.SetTop(ellipse, srYCoor);
         Canvas.SetLeft(ellipse, srXCoor);
         ellipse.Fill = new SolidColorBrush(srColor);

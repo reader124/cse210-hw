@@ -34,6 +34,16 @@ namespace FinalProject
             srRectangle srNew = new srRectangle(20, 100, 50, 50, Colors.Red);
             Rectangle rect = srNew.srMakeShape();
             rect.PreviewMouseDown += srOnMouseDown;
+
+            ContextMenu srRightClickMenu = new ContextMenu();
+
+            MenuItem srDelete = new MenuItem();
+            srDelete.Header = "Delete";
+            srDelete.Click += srDeleteItem;
+            srDelete.Tag = rect;
+            srRightClickMenu.Items.Add(srDelete);
+
+            rect.ContextMenu = srRightClickMenu;
             myCanvas.Children.Add(rect);
         }
         void srDoThingTwo(object sender, RoutedEventArgs e)
@@ -41,6 +51,16 @@ namespace FinalProject
             srOval srNew = new srOval(100, 100, 50, 50, Colors.Green);
             Ellipse ellipse = srNew.srMakeShape();
             ellipse.PreviewMouseDown += srOnMouseDown;
+
+            ContextMenu srRightClickMenu = new ContextMenu();
+
+            MenuItem srDelete = new MenuItem();
+            srDelete.Header = "Delete";
+            srDelete.Click += srDeleteItem;
+            srDelete.Tag = ellipse;
+            srRightClickMenu.Items.Add(srDelete);
+
+            ellipse.ContextMenu = srRightClickMenu;
             myCanvas.Children.Add(ellipse);
         }
         void srDoThingThree(object sender, RoutedEventArgs e)
@@ -48,6 +68,16 @@ namespace FinalProject
             srLine srNew = new srLine(100, 50, 50, 50, 5);
             Line line = srNew.srMakeLine();
             line.PreviewMouseDown += srOnMouseDown;
+
+            ContextMenu srRightClickMenu = new ContextMenu();
+
+            MenuItem srDelete = new MenuItem();
+            srDelete.Header = "Delete";
+            srDelete.Click += srDeleteItem;
+            srDelete.Tag = line;
+            srRightClickMenu.Items.Add(srDelete);
+
+            line.ContextMenu = srRightClickMenu;
             myCanvas.Children.Add(line);
         }
         void srDoThingFour(object sender, RoutedEventArgs e)
@@ -55,6 +85,16 @@ namespace FinalProject
             srText srNew = new srText(300, 100, 50, 50, inputText.Text, 25);
             TextBlock text = srNew.srMakeText();
             text.PreviewMouseDown += srOnMouseDown;
+
+            ContextMenu srRightClickMenu = new ContextMenu();
+
+            MenuItem srDelete = new MenuItem();
+            srDelete.Header = "Delete";
+            srDelete.Click += srDeleteItem;
+            srDelete.Tag = text;
+            srRightClickMenu.Items.Add(srDelete);
+
+            text.ContextMenu = srRightClickMenu;
             myCanvas.Children.Add(text);
         }
 
@@ -81,6 +121,13 @@ namespace FinalProject
             this.srOffset.Y = Canvas.GetTop(this.srDrag);
             this.srOffset.X = Canvas.GetLeft(this.srDrag);
             this.myCanvas.CaptureMouse();
+        }
+
+        //right click menu methods
+        void srDeleteItem(object sender, RoutedEventArgs e)
+        {
+            UIElement srItem = (UIElement)((MenuItem)sender).Tag;
+            myCanvas.Children.Remove(srItem);
         }
     }
 }

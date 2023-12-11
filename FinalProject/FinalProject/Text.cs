@@ -46,7 +46,6 @@ public class srText : srObject
         TextBlock srNew = new TextBlock();
         srNew.Text = srTextContent;
         srNew.FontSize = srFontSize;
-        srNew.Margin = new Thickness(srWidth, srHeight, srWidth, srHeight);
         Canvas.SetTop(srNew, srYCoor);
         Canvas.SetLeft(srNew, srXCoor);
         return srNew;
