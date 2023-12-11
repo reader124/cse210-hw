@@ -1,4 +1,17 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 public class srText : srObject
 {
@@ -23,8 +36,19 @@ public class srText : srObject
     }
 
     //change how big the text is
-    public void srChangeFontSize()
+    public void srChangeFontSize( int newFont)
     {
-        //stuff
+        srFontSize = newFont;
+    }
+
+    public TextBlock srMakeText()
+    {
+        TextBlock srNew = new TextBlock();
+        srNew.Text = srTextContent;
+        srNew.FontSize = srFontSize;
+        srNew.Margin = new Thickness(srWidth, srHeight, srWidth, srHeight);
+        Canvas.SetTop(srNew, srYCoor);
+        Canvas.SetLeft(srNew, srXCoor);
+        return srNew;
     }
 }

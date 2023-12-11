@@ -13,9 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-
-    public class srObject
+public class srObject
     {
         protected float srXCoor;
         protected float srYCoor;
@@ -36,17 +34,5 @@ using System.Windows.Shapes;
             srYCoor = y;
             srWidth = width;
             srHeight = height;
-        }
-
-        public Ellipse srStuff()
-        {
-            // Create an ellipse
-            Ellipse ellipse = new Ellipse();
-            ellipse.Width = 50;
-            ellipse.Height = 50;
-            ellipse.Fill = new SolidColorBrush(Colors.Blue);
-
-            // Add the ellipse to the canvas
-            return ellipse;
         }
     }

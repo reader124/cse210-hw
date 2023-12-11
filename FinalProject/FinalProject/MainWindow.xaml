@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel Name="myStack">
-		<Button Content="red" Margin="1,1,0,0" Height="50" Width="100" Click="srDoThing"/>
-		<Button Content="blue" Margin="1,1,0,0" Height="50" Width="100" Click="srDoThingTwo"/>
-
-		<Canvas Name="myCanvas"></Canvas>
-	</StackPanel>
+    <Grid Name="myGrid">
+		<Button Content="Rectangle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,20" Height="50" Width="100" Click="srDoThing"/>
+		<Button Content="Oval" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,20,20,20" Height="50" Width="100" Click="srDoThingTwo"/>
+		<Button Content="Line" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,20,20,20" Height="50" Width="100" Click="srDoThingThree"/>
+		<TextBox Name="inputText" Text="Enter Text Here" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="450,20,20,20" Width="100"/>
+		<Button Content="Text" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="450,35,20,20" Height="35" Width="100" Click="srDoThingFour"/>
+		<Canvas Name="myCanvas" PreviewMouseMove="srOnMouseMove" PreviewMouseUp="srOnMouseUp" Height="450" Width="800"></Canvas>
+	</Grid>
 </Window>

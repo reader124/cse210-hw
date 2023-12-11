@@ -1,4 +1,17 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 public class srLine : srObject
 {
@@ -19,8 +32,24 @@ public class srLine : srObject
     }
 
     //change how thick the line is
-    public void srChangeThickness()
+    public void srChangeThickness( int newThickness)
     {
-        //stuff
+        srThickness = newThickness;
+    }
+
+    public Line srMakeLine()
+    {
+        Line line = new Line();
+        line.X1 = srXCoor;
+        line.Y1 = srYCoor;
+        line.X2 = srXCoor + srWidth;
+        line.Y2 = srYCoor + srHeight;
+        line.Margin = new Thickness(srWidth, srHeight, srWidth, srHeight);
+        Canvas.SetTop(line, srYCoor);
+        Canvas.SetLeft(line, srXCoor);
+        line.Stroke = System.Windows.Media.Brushes.Black;
+        line.StrokeThickness = srThickness;
+
+        return line;
     }
 }
